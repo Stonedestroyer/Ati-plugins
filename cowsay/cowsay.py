@@ -1,13 +1,9 @@
 import discord
 from discord.ext import commands
 import textwrap
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
 import asyncio, aiohttp, io, time, imghdr, os, json
-from __main__ import send_cmd_help
 
-class CowSay:
+    class CowSay:
     """
     Commands that are used for fun.
     """
@@ -28,13 +24,13 @@ class CowSay:
     async def cowthink(self, *, message : str):
         cow = self.build_box(message, 40) + self.build_thinkcow()
 
-        return await self.bot.say(self._box_text(cow))
+        return await ctx.send(self._box_text(cow))
 
     @commands.command()
     async def cowsay(self, *, message : str):
         cow = self.build_box(message, 40) + self.build_saycow()
 
-        return await self.bot.say(self._box_text(cow))
+        return await ctx.send(self._box_text(cow))
 
 
     # Cowsay code used from https://github.com/jcn/cowsay-py
@@ -92,6 +88,3 @@ class CowSay:
 
         else:
             return [ "|", "|" ]
-
-def setup(bot):
-    bot.add_cog(CowSay(bot))
