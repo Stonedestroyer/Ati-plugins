@@ -69,7 +69,7 @@ class Statistics(commands.Cog):
 
         em.add_field(name="**Messages received**", value=str(stats["read_messages"]))
         em.add_field(name="**Commands run**", value=str(stats["commands_run"]))
-        em.add_field(name=u"\u2063", value=u"\u2063")
+        em.add_field(name="**Shards**", value=str(stats["shards"]))
 
         em.add_field(name="**Active cogs**", value=str(len(self.bot.cogs)))
         em.add_field(name="**Commands**", value=str(len(self.bot.commands)))
@@ -108,6 +108,7 @@ class Statistics(commands.Cog):
         text_channels = sum(len(s.text_channels) for s in self.bot.guilds)
         voice_channels = sum(len(s.text_channels) for s in self.bot.guilds)
         channels = text_channels + voice_channels
+        shards = self.bot.shard_count
 
         stats = {
             "name": name,
@@ -124,6 +125,7 @@ class Statistics(commands.Cog):
             "threads": threads,
             "io_reads": io_reads,
             "io_writes": io_writes,
+            "shards": shards,
         }
         return stats
 
