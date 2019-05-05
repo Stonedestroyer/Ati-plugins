@@ -1,8 +1,9 @@
 {
-    "AUTHOR" : ["Paddolicious#8880, William#0660", "Slime#3160"],
-    "NAME" : "Statistics",
-    "SHORT" : "Keeps track of statistics",
-    "DESCRIPTION" : "Keeps track of statistics, and gives the ability to have it update in a channel of your choice. Made by Paddolicious#8880, updated by William#0660.",
-    "REQUIREMENTS" : ["psutil"],
-    "TAGS": ["statistics", "tracking", "status"]
+    "author" : ["Paddolicious#8880, William#0660", "Slime#3160"],
+    "name" : "Statistics",
+    "short" : "Keeps track of statistics",
+    "install_msg" : "Thanks for installing statistics. Use `[p]stats` to see bot stats.",
+    "description" : "Keeps track of statistics, and gives the ability to have it update in a channel of your choice. Made by Paddolicious#8880, updated by William#0660, updated by Slime#3160.",
+    "requirements" : ["psutil"],
+    "tags": ["statistics", "tracking", "status"]
 }
